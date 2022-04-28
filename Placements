@@ -1,0 +1,18 @@
+Select 
+t.tName
+From
+(Select 
+s.ID as tID,
+s.Name as tName,
+f.Friend_ID as tFrndID,
+p.salary as tSalary,
+p1.salary as tFrndSalary
+From Students s
+inner join Friends f
+on s.id = f.id
+inner join Packages p
+on f.id = p.id
+inner join Packages p1
+on f.Friend_ID = p1.id) t
+Where t.tSalary < t.tFrndSalary
+Order By t.tFrndSalary;
