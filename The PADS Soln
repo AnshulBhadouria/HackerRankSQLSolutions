@@ -1,0 +1,10 @@
+Select 
+concat(Name, Concat(Concat('(',Substring(Occupation,1,1)),')'))
+From Occupations
+Order By Name;
+
+Select
+concat(concat(concat(concat('There are a total of ', Count(Name)),' '), lower(Occupation)),'s.')
+From Occupations
+Group By Occupation
+Order By Count(Name),Occupation;
